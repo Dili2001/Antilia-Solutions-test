@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="row m-5  ">
+        <form [formGroup]="registerForm" (ngSubmit)="register()" action="" class="row g-3">
+            <div class="container text-center">
+                <h3 class="text-white mt-5">REGISTRATION FORM</h3>
+            </div>
+            <div class="col-md-6 input-group-sm ">
+                <label for="email" class="form-label text-white">E-mail</label>
+                <input type="text" name="email" formControlName="email" class="form-control " id="email" required>
+                <span class="text-danger"
+                    *ngIf="(registerForm.get('email')?.touched) && registerForm.get('email')?.errors?.['required']">
+                    Email is required
+                </span>
+                <span class="text-danger"
+                    *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['pattern']">
+                    Enter a valid email address
+                </span>
+            </div>
+            <div class="col-md-6 input-group-sm ">
+                <label for="ePswd" class="form-label text-white">Password</label>
+                <input type="password" name="ePswd" formControlName="ePswd" class="form-control" id="ePswd" required>
+                <span class="text-danger"
+                    *ngIf="(registerForm.get('ePswd')?.touched) && registerForm.get('ePswd')?.errors?.['required']">
+                    Password is required
+                </span>
+                <span class="text-danger"
+                    *ngIf="registerForm.get('ePswd')?.touched && registerForm.get('ePswd')?.errors?.['pattern']">
+                    Wrong Password
+                </span>
+            </div>
+            <div class="col-md-6 input-group-sm ">
+                <label for="url" class="form-label text-white">URL</label>
+                <input type="text" name="url" formControlName="url" class="form-control" id="url" required>
+                <span class="text-danger"
+                    *ngIf="(registerForm.get('url')?.touched) && registerForm.get('url')?.errors?.['required']">
+                    Url is required
+                </span>
+                <span class="text-danger"
+                    *ngIf="registerForm.get('url')?.touched && registerForm.get('url')?.errors?.['pattern']">
+                    Enter a valid Url
+                </span>
+            </div>
+            <div class="col-md-6 input-group-sm ">
+                <label for="fname" class="form-label text-white">First Name</label>
+                <input type="text" name="fname" formControlName="fname" class="form-control" id="fname" required>
+                <span class="text-danger"
+                    *ngIf="(registerForm.get('fname')?.touched) && registerForm.get('fname')?.errors?.['required']">
+                    First name is required
+                </span>
+                <span class="text-danger"
+                    *ngIf="registerForm.get('fname')?.touched && registerForm.get('fname')?.errors?.['pattern']">
+                    Please enter your correct name
+                </span>
+            </div>
+            <div class="col-md-6 input-group-sm ">
+                <label for="lname" class="form-label text-white">Last Name</label>
+                <input type="text" name="lname" formControlName="lname" class="form-control" id="lname" required>
+                <span class="text-danger"
+                    *ngIf="(registerForm.get('lname')?.touched) && registerForm.get('lname')?.errors?.['required']">
+                    Last name is required
+                </span>
+                <span class="text-danger"
+                    *ngIf="registerForm.get('lname')?.touched && registerForm.get('lname')?.errors?.['pattern']">
+                    Please enter your correct last name
+                </span>
+            </div>
+            <div class="col-md-6 input-group-sm ">
+                <label for="cmpnyname" class="form-label text-white">Company Name</label>
+                <input type="text" name="cmpnyname" formControlName="cmpnyname" class="form-control" id="cmpnyname"
+                    required>
+                    <span class="text-danger"
+                    *ngIf="(registerForm.get('cmpnyname')?.touched) && registerForm.get('cmpnyname')?.errors?.['required']">
+                    Company name is required
+                </span>
+                <span class="text-danger"
+                    *ngIf="registerForm.get('cmpnyname')?.touched && registerForm.get('cmpnyname')?.errors?.['pattern']">
+                    Please enter correct details
+                </span>
+            </div>
+            <div class="col-md-6 input-group-sm ">
+                <label for="mobNo" class="form-label text-white">Mobile Number</label>
+                <input type="text" name="mobNo" formControlName="mobNo" class="form-control" id="mobNo" required>
+                <span class="text-danger"
+                    *ngIf="(registerForm.get('mobNo')?.touched) && registerForm.get('mobNo')?.errors?.['required']">
+                    Mobile number is required
+                </span>
+                <span class="text-danger"
+                    *ngIf="registerForm.get('mobNo')?.touched && registerForm.get('mobNo')?.errors?.['pattern']">
+                    Please enter a valid Mobile number
+                </span>
+            </div>
+            <div class="text-center mt-3 mb-3">
+                <input type="button" class="btn  btn-primary" type="submit" value="Register">
+            </div>
+        </form>
+        <div class="d-flex mt-2">
+            <p class="text">Already an user?</p>
+            <a routerLink='login-page'>Login Here</a>
+        </div>
+    </div>
+</div>
